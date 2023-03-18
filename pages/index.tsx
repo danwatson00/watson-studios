@@ -18,12 +18,6 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.container}>
-          <div>
-            <span>With default Theme:</span>
-          </div>
-          <Switch {...label} defaultChecked />
-          <Switch {...label} />
-          <Switch {...label} disabled defaultChecked />
         </div>
       </main>
     </>
