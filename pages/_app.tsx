@@ -1,8 +1,8 @@
-import "../styles/globals.css";
-import { ThemeProvider } from "@mui/material";
+import { ThemeProvider, Box } from "@mui/material";
 import { theme } from "../utils/theme";
 import createEmotionCache from "../utils/createEmotionCache";
 import { CacheProvider } from "@emotion/react";
+import TopMenu from '../components/TopMenu'
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -16,7 +16,10 @@ function MyApp ({ Component, emotionCache = clientSideEmotionCache, pageProps }:
   return (
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <TopMenu />
+        <Box sx={{ m: 2 }}>
+          <Component {...pageProps} />
+        </Box>
       </ThemeProvider>
     </CacheProvider>
   );
